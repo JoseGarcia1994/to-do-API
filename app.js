@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require("./utils/database");
 const ToDoList = require("./models/toDoList.model");
+const cors = require("cors");
 require('dotenv').config();
 
 ToDoList;
@@ -19,6 +20,7 @@ db.sync() // This creates the table if it doesn't exist (and does nothing if it 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 //******************** CRUD ********************
 
